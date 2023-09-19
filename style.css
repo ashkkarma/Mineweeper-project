@@ -1,0 +1,43 @@
+* {
+box-sizing: border-box;
+}
+body {
+    height: 100 vh;
+    margin: 0;
+}
+.mineBody {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+  
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    /* height: 60%; */
+    justify-content: center;
+    align-content: baseline;
+    /* height: 500px; */
+    width: 40%;
+    /* line-height:0.8em; */
+}
+.container div {
+    border: 1px solid black;
+    /* flex-grow: ; */
+    height: 8%;
+    width: 8%;
+    font-size:smaller;
+    flex-basis :6%;
+}
+.container div .mine {
+    background-image: url('../mineweeper/rsz_image_2023-09-18_104052.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    
+}
+
+
