@@ -96,12 +96,15 @@ function emptySpace (){
 //hint map func
 
 function hint (){
+  
   for (let i = 16 ; i < (cellCount+16) ; i ++){
+    
     const hintInd = document.getElementById(`${i}`)
     let num = parseInt(hintInd.innerText)
     hintInd.addEventListener('click', ()=>{
-    if (mineArray.includes(num) === false){
+    if (mineArray.includes(num) === false ){
       const hintArr = []
+      if(( num % 16 !== 0) && (num % 16 !== 15)){
       if(mineArray.includes(num - 1) === true){
         hintArr.push(num-1)
       }
@@ -126,9 +129,60 @@ function hint (){
       if(mineArray.includes(num + 17) === true){
         hintArr.push(num+17)
       }
-      console.log(hintArr);
+      
+      if (hintArr.length>0){
+        const hintCellGet = document.getElementById(`${i}`)
+        let hintCellCreate = document.createElement('span')
+        hintCellCreate.innerHTML = `${hintArr.length}`
+        hintCellGet.appendChild(hintCellCreate)
+        }
+    } else if (( num % 16 === 0)){
+      if(mineArray.includes(num - 15) === true){
+        hintArr.push(num-15)
+      }
+      if(mineArray.includes(num - 16) === true){
+        hintArr.push(num-16)
+      }
+      if(mineArray.includes(num + 1) === true){
+        hintArr.push(num+1)
+      }
+      if(mineArray.includes(num + 16) === true){
+        hintArr.push(num+16)
+      }
+      if(mineArray.includes(num + 17) === true){
+        hintArr.push(num+17)
+      }
+      if (hintArr.length>0){
+      const hintCellGet = document.getElementById(`${i}`)
+      let hintCellCreate = document.createElement('span')
+      hintCellCreate.innerHTML = `${hintArr.length}`
+      hintCellGet.appendChild(hintCellCreate)
+      }
+    }else if (( num % 16 === 15)){
+      if(mineArray.includes(num - 17) === true){
+        hintArr.push(num-17)
+      }
+      if(mineArray.includes(num - 16) === true){
+        hintArr.push(num-16)
+      }
+      if(mineArray.includes(num - 1) === true){
+        hintArr.push(num-1)
+      }
+      if(mineArray.includes(num + 16) === true){
+        hintArr.push(num+16)
+      }
+      if(mineArray.includes(num + 15) === true){
+        hintArr.push(num+15)
+      }
+      if (hintArr.length>0){
+        const hintCellGet = document.getElementById(`${i}`)
+        let hintCellCreate = document.createElement('span')
+        hintCellCreate.innerHTML = `${hintArr.length}`
+        hintCellGet.appendChild(hintCellCreate)
+        }
     }
-    
+  }
+
 })
   }
  
@@ -163,3 +217,21 @@ function winGame () {
 // hintCounter()
 }
 window.addEventListener('Dom', init())
+
+
+// else if (mineArray.includes(num) === false &&( num % 16 === 0) && (num % 16 === 15) ){
+    //   const hintArr = []
+    //   if(mineArray.includes(num + 1) === true){
+    //     hintArr.push(num+1)}
+    //     if(mineArray.includes(num + 16) === true){
+    //       hintArr.push(num+16)
+    //     }
+    //     if(mineArray.includes(num + 17) === true){
+    //       hintArr.push(num+17)
+    //     }  if(mineArray.includes(num - 15) === true){
+    //       hintArr.push(num-15)
+    //     }
+    //     if(mineArray.includes(num - 16) === true){
+    //       hintArr.push(num-16)
+    //     }console.log(hintArr);
+    // }
