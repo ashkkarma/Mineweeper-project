@@ -1,26 +1,3 @@
-// const second = 1000,
-//       minute = second * 60,
-//       hour = minute * 60,
-//       day = hour * 24;
-
-// let countDown = new Date('Feb 10, 2020 00:00:00').getTime(),
-//     x = setInterval(function() {    
-
-//       let now = new Date().getTime(),
-//           distance = now - countDown;
-
-//       document.getElementById('days').innerText = Math.floor(distance / (day)),
-//         document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
-//         document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-//         document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
-
-//       //do something later when date is reached
-//       //if (distance < 0) {
-//       //  clearInterval(x);
-//       //  'IT'S MY BIRTHDAY!;
-//       //}
-
-//     }, second)
 
 function init () {
 
@@ -32,7 +9,7 @@ const cellCount = width*height
 const mineArray =[]
 
 
-console.log(mineArray);
+// console.log(mineArray);
 for (let i = 0 ; i < 40 ; i++){
  
 let random = (Math.floor(271 * Math.random()));
@@ -53,7 +30,7 @@ for (let i = 16 ; i < (cellCount+16) ; i ++){
   // document.querySelector('.mineBody').style.flexBasis = `${100/width}%`;
 
   grid.appendChild(cell)
-  console.log(cell );
+  // console.log(cell );
 }
 
 // set out the random mine map
@@ -68,6 +45,106 @@ function mineMap() {
   })
 }
 mineMap()
+
+///set click function
+
+function flagSelector (){
+  let disableRight = document.querySelector('.container')
+  disableRight.addEventListener('contextmenu',(right)=>{
+    right.preventDefault();
+
+  } )
+for (let i = 16 ; i < (cellCount+16) ; i ++){
+  let flagSelect = document.getElementById(`${i}`)
+  flagSelect.addEventListener('contextmenu',(right)=>{
+  right.preventDefault();
+  const flagImg = document.createElement('img')
+  flagImg.src = 'flag.png'
+  flagSelect.appendChild(flagImg)
+})
+}
+}
+flagSelector()
+
+
+//leftClickFuncs,game over function,hint function
+function leftClickFunc (){
+  for (let i = 16 ; i < (cellCount+16) ; i ++){
+    const leftClick = document.getElementById(`${i}`)
+    let num = parseInt(leftClick.innerText)
+    leftClick.addEventListener('click', ()=>{
+      if (mineArray.includes(num) === true){
+  gameOver()
+      }
+    })
+  }
+    }
+leftClickFunc()
+
+//game over function
+function gameOver(){alert("finsh");reset()}
+ 
+        
+///reset function
+function reset(){window.location.reload()}
+///empty space func
+function emptySpace (){
+  
+}
+// emptySpace ()
+
+//hint map func
+
+function hint (){
+  for (let i = 16 ; i < (cellCount+16) ; i ++){
+    const hintInd = document.getElementById(`${i}`)
+    let num = parseInt(hintInd.innerText)
+    hintInd.addEventListener('click', ()=>{
+    if (mineArray.includes(num) === false){
+      const hintArr = []
+      if(mineArray.includes(num - 1) === true){
+        hintArr.push(num-1)
+      }
+      if(mineArray.includes(num - 15) === true){
+        hintArr.push(num-15)
+      }
+      if(mineArray.includes(num - 16) === true){
+        hintArr.push(num-16)
+      }
+      if(mineArray.includes(num - 17) === true){
+        hintArr.push(num-17)
+      }
+      if(mineArray.includes(num + 1) === true){
+        hintArr.push(num+1)
+      }
+      if(mineArray.includes(num + 15) === true){
+        hintArr.push(num+15)
+      }
+      if(mineArray.includes(num + 16) === true){
+        hintArr.push(num+16)
+      }
+      if(mineArray.includes(num + 17) === true){
+        hintArr.push(num+17)
+      }
+      console.log(hintArr);
+    }
+    
+})
+  }
+ 
+}
+hint()
+/// winning function
+
+function winGame () {
+  
+}
+// winGame ()
+
+
+
+
+
 // function hintCounter (){
 //   if (mineArray[0] !== 16){
 //   for (let i = 16 ; i < 272 ; i++){
