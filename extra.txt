@@ -1,0 +1,72 @@
+for (let i = 16 ; i < (cellCount+16) ; i ++){
+    
+    const hintInd = document.getElementById(`${i}`)
+    let num = parseInt(hintInd.innerText)
+    hintInd.addEventListener('click', ()=>{
+    if (mineArray.includes(num) === false ){
+      const hintArr = []
+      if(( num % 16 !== 0) && (num % 16 !== 15)){
+      if(mineArray.includes(num - 1) === true){
+        hintArr.push(num-1)
+      }
+      if(mineArray.includes(num - 15) === true){
+        hintArr.push(num-15)
+      }
+      if(mineArray.includes(num - 16) === true){
+        hintArr.push(num-16)
+      }
+      if(mineArray.includes(num - 17) === true){
+        hintArr.push(num-17)
+      }
+      if(mineArray.includes(num + 1) === true){
+        hintArr.push(num+1)
+      }
+      if(mineArray.includes(num + 15) === true){
+        hintArr.push(num+15)
+      }
+      if(mineArray.includes(num + 16) === true){
+        hintArr.push(num+16)
+      }
+      if(mineArray.includes(num + 17) === true){
+        hintArr.push(num+17)
+      }
+      
+      console.log(hintArr);
+    } else if (( num % 16 === 0)){
+      if(mineArray.includes(num - 15) === true){
+        hintArr.push(num-15)
+      }
+      if(mineArray.includes(num - 16) === true){
+        hintArr.push(num-16)
+      }
+      if(mineArray.includes(num + 1) === true){
+        hintArr.push(num+1)
+      }
+      if(mineArray.includes(num + 16) === true){
+        hintArr.push(num+16)
+      }
+      if(mineArray.includes(num + 17) === true){
+        hintArr.push(num+17)
+      }
+      console.log(hintArr);
+    }else if (( num % 16 === 15)){
+      if(mineArray.includes(num - 17) === true){
+        hintArr.push(num-17)
+      }
+      if(mineArray.includes(num - 16) === true){
+        hintArr.push(num-16)
+      }
+      if(mineArray.includes(num - 1) === true){
+        hintArr.push(num-1)
+      }
+      if(mineArray.includes(num + 16) === true){
+        hintArr.push(num+16)
+      }
+      if(mineArray.includes(num + 15) === true){
+        hintArr.push(num+15)
+      }
+      console.log(hintArr);
+    }
+  }
+})
+  }

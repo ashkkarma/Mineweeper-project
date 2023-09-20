@@ -4,7 +4,57 @@ box-sizing: border-box;
 body {
     height: 100 vh;
     margin: 0;
+   
 }
+.timer{
+    width: 20%;
+    padding: 2vw 0;
+  
+  text-align: center;
+  background: rgb(87, 87, 130);
+  box-shadow: 15px 15px 30px gray, -15px -15px 30px darkgray;
+  border-radius: 20px;
+}
+#time {
+    background: gold;
+    box-shadow: inset 15px 15px 30px green,
+      inset -15px -15px 30px gold;
+    width: calc(100% - 20%);
+    margin: 3vw auto;
+    padding: 6px 0;
+    font-size: 4vw;
+    border-radius: 20px;
+  }
+
+  .timerBtn {
+    /* display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vw;
+    height: 4vw;
+    margin: 0 1vw;
+    border: none;
+    font-size: 2vw;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 4px 4px 8px violet, -4px -4px 8px green; */
+
+    
+  }
+  /* .timerBtn :hover {
+    border-radius: 10px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow: 4px 4px 8px gold, -4px -4px 8px greenyellow;
+  } */
+
+  /* #startStop {
+    color: green;
+  }
+
+  #reset {
+    color: blue;
+  } */
+
 .mineBody {
     height: 100vh;
     display: flex;
