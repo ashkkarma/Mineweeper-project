@@ -70,3 +70,49 @@ for (let i = 16 ; i < (cellCount+16) ; i ++){
   }
 })
   }
+
+
+
+
+  ////
+
+  20.sep 23:00
+  hintInd.addEventListener('click', ()=>{
+    if (mineArray.includes(num) === false ){
+      hintArr.splice(0,hintArr.length)
+      
+      if(( num % 16 !== 0) && (num % 16 !== 15)){
+      if(mineArray.includes(num - 1) === true){
+        hintArr.push(num-1)
+      }
+      if(mineArray.includes(num - 15) === true){
+        hintArr.push(num-15)
+      }
+      if(mineArray.includes(num - 16) === true){
+        hintArr.push(num-16)
+      }
+      if(mineArray.includes(num - 17) === true){
+        hintArr.push(num-17)
+      }
+      if(mineArray.includes(num + 1) === true){
+        hintArr.push(num+1)
+      }
+      if(mineArray.includes(num + 15) === true){
+        hintArr.push(num+15)
+      }
+      if(mineArray.includes(num + 16) === true){
+        hintArr.push(num+16)
+      }
+      if(mineArray.includes(num + 17) === true){
+        hintArr.push(num+17)
+      }
+      
+       if (hintArr.length>0)
+      {
+        const hintCellGet = document.getElementById(`${i}`)
+        let hintCellCreate = document.createElement('p')
+        hintCellCreate.innerHTML = `${hintArr.length}`
+        hintCellGet.replaceChildren(hintCellCreate)
+        // console.log(hintArr);
+       
+        }

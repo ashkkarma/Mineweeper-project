@@ -24,6 +24,7 @@ const grid = document.querySelector('.container')
 for (let i = 16 ; i < (cellCount+16) ; i ++){
   const cell = document.createElement('div')
   cell.innerText = i
+  
   cell.setAttribute('id' , i)
   // cell.style.height = `${100 / height}`
   // cell.style.width = `${100 / width}`
@@ -40,7 +41,7 @@ function mineMap() {
     let mineCell = document.getElementById(`${number}`)
     mineCell.setAttribute("class", mineCell)
     const mineImg = document.createElement('img')
-    mineImg.src = 'mine.jpg'
+    mineImg.src = 'image-40x40.jpg'
     mineCell.appendChild(mineImg)
   })
 }
@@ -70,7 +71,8 @@ function flagSelector (){
   } )
 for (let i = 16 ; i < (cellCount+16) ; i ++){
   let flagSelect = document.getElementById(`${i}`)
-  let flagInd = parseInt(flagSelect.innerText)
+  let flagInd = parseInt(flagSelect.id)
+
   flagSelect.addEventListener('contextmenu',(right)=>{
   right.preventDefault();
   const flagImg = document.createElement('img')
@@ -80,7 +82,7 @@ for (let i = 16 ; i < (cellCount+16) ; i ++){
   flagImg.remove()
     flagArr.splice(flagInd,0)
   }else{flagArr.push(flagInd)
-    logFlag ()
+    // logFlag ()
     winGame()}
   
   
@@ -182,10 +184,11 @@ function hint (){
     
     
     const hintInd = document.getElementById(`${i}`)
-    let num = parseInt(hintInd.innerHTML)
+    let num = parseInt(hintInd.id)
     hintInd.addEventListener('click', ()=>{
     if (mineArray.includes(num) === false ){
       hintArr.splice(0,hintArr.length)
+      
       if(( num % 16 !== 0) && (num % 16 !== 15)){
       if(mineArray.includes(num - 1) === true){
         hintArr.push(num-1)
@@ -212,21 +215,28 @@ function hint (){
         hintArr.push(num+17)
       }
       
-       if (hintArr.length>=1)
+       if (hintArr.length>0)
       {
         const hintCellGet = document.getElementById(`${i}`)
-        let hintCellCreate = document.createElement('span')
+        let hintCellCreate = document.createElement('p')
         hintCellCreate.innerHTML = `${hintArr.length}`
-        hintCellGet.appendChild(hintCellCreate)
+        hintCellGet.replaceChildren(hintCellCreate)
         // console.log(hintArr);
        
         }
-        // else if (hintArr.length=0){
-        //   console.log('hiii');
-        //   // const emptyCellGet = document.getElementById(`${i}`)
-        //   // let emptyCellCreate = document.createElement('span')
-        //   // emptyCellCreate.innerHTML = 'empty'
-        //   // emptyCellGet.appendChild(emptyCellCreate)
+        //  if (hintArr.length < 1){
+        
+        //     // for (let i = 16 ; i < (cellCount+16) ; i ++){
+        //       const emptyGet = document.getElementById(`${i}`)
+        //       const nextCell = parseInt(lengthCal(i))
+
+        //       //  console.log('hiii');
+        //       if (nextCell < 1){console.log('hiii');}
+              
+            
+          
+        //   // }
+        
         // }
        
     } else if (( num % 16 === 0)){
@@ -249,7 +259,7 @@ function hint (){
       const hintCellGet = document.getElementById(`${i}`)
       let hintCellCreate = document.createElement('span')
       hintCellCreate.innerHTML = `${hintArr.length}`
-      hintCellGet.appendChild(hintCellCreate)
+      hintCellGet.replaceChildren(hintCellCreate)
       }
     }else if (( num % 16 === 15)){
       if(mineArray.includes(num - 17) === true){
@@ -271,7 +281,7 @@ function hint (){
         const hintCellGet = document.getElementById(`${i}`)
         let hintCellCreate = document.createElement('span')
         hintCellCreate.innerHTML = `${hintArr.length}`
-        hintCellGet.appendChild(hintCellCreate)
+        hintCellGet.replaceChildren(hintCellCreate)
         }
     } 
   }
@@ -309,6 +319,8 @@ console.log(areEqual(flagArr, mineArray))
 }
 
 
+//empty spaces function
+
 
 
 
@@ -329,6 +341,96 @@ console.log(areEqual(flagArr, mineArray))
 //   }
 // }
 // hintCounter()
+
+let newHintAryy = []
+
+function lengthCal (ind){
+  const indLength = document.getElementById(`${ind}`)
+  let num = parseInt(indLength.id)
+  if (mineArray.includes(num) === false){
+    if(( num % 16 !== 0) && (num % 16 !== 15)){
+      if(mineArray.includes(num - 1) === true){
+        newHintAryy.push(num-1)
+      }
+      if(mineArray.includes(num - 15) === true){
+        newHintAryy.push(num-15)
+      }
+      if(mineArray.includes(num - 16) === true){
+        newHintAryy.push(num-16)
+      }
+      if(mineArray.includes(num - 17) === true){
+        newHintAryy.push(num-17)
+      }
+      if(mineArray.includes(num + 1) === true){
+        newHintAryy.push(num+1)
+      }
+      if(mineArray.includes(num + 15) === true){
+        newHintAryy.push(num+15)
+      }
+      if(mineArray.includes(num + 16) === true){
+        newHintAryy.push(num+16)
+      }
+      if(mineArray.includes(num + 17) === true){
+        newHintAryy.push(num+17)
+      } 
+      {
+        
+        
+        return(newHintAryy.length);
+       
+        }
+  }else if (( num % 16 === 0)){
+    if(mineArray.includes(num - 15) === true){
+      newHintAryy.push(num-15)
+    }
+    if(mineArray.includes(num - 16) === true){
+      newHintAryy.push(num-16)
+    }
+    if(mineArray.includes(num + 1) === true){
+      newHintAryy.push(num+1)
+    }
+    if(mineArray.includes(num + 16) === true){
+      newHintAryy.push(num+16)
+    }
+    if(mineArray.includes(num + 17) === true){
+      newHintAryy.push(num+17)
+    }
+    {
+      return(newHintAryy);
+    }
+  }else if (( num % 16 === 15)){
+    if(mineArray.includes(num - 17) === true){
+      newHintAryy.push(num-17)
+    }
+    if(mineArray.includes(num - 16) === true){
+      newHintAryy.push(num-16)
+    }
+    if(mineArray.includes(num - 1) === true){
+      newHintAryy.push(num-1)
+    }
+    if(mineArray.includes(num + 16) === true){
+      newHintAryy.push(num+16)
+    }
+    if(mineArray.includes(num + 15) === true){
+      newHintAryy.push(num+15)
+    }
+    return(newHintAryy);
+  } 
+}
+}
+emptyReveal()
+function emptyReveal(){
+  
+for (let i = 16 ; i < (cellCount+16) ; i ++){
+const emptyGet = document.getElementById(`${i}`)
+const num = parseInt(emptyGet)
+emptyGet.addEventListener('click', () =>{
+  if (mineArray.includes(num)=== false&& lengthCal(i)<1 ){
+    console.log('heyyyyy');
+  }
+})
+}
+}
 }
 window.addEventListener('Dom', init())
 

@@ -39,7 +39,7 @@ body {
     background: linear-gradient(145deg, #f0f0f0, #cacaca);
     box-shadow: 4px 4px 8px violet, -4px -4px 8px green; */
 
-    
+    display: none ;
   }
   /* .timerBtn :hover {
     border-radius: 10px;
@@ -72,20 +72,22 @@ body {
     align-content: baseline;
     /* height: 500px; */
     width: 40%;
+    min-width: 900px;
     /* line-height:0.8em; */
+    
 }
 .container div {
     border: 1px solid black;
     /* flex-grow: ; */
-    height: 8%;
-    width: 8%;
+    height: 40px;
+    width: 40px;
     font-size:smaller;
     flex-basis :6%;
 }
 .container div .mine {
-    background-image: url('../mineweeper/rsz_image_2023-09-18_104052.jpg');
+    /* background-image: url('../mineweeper/rsz_image_2023-09-18_104052.jpg'); */
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     cursor: pointer;
     
 }
