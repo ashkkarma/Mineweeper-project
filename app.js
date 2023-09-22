@@ -1,6 +1,11 @@
 
 function init() {
-
+  let startGame = document.querySelector('.imoji')
+  
+  const startimg = document.createElement('img')
+  startimg.src = 'happy40.jpg'
+startGame.appendChild(startimg)
+document.querySelector('.counter').innerText = '40'
   //body layout
   const width = 16
   const height = 16
@@ -117,7 +122,9 @@ function init() {
     }
   }
 
-
+  document.querySelector('.imoji').addEventListener('click' ,()=>{
+    location.reload();
+  })
 
   document.querySelectorAll('.container div').forEach(div => {
     div.addEventListener('click', () => {
@@ -130,8 +137,12 @@ function init() {
 
   //game over function
   function gameOver() {
-    alert("finsh");
-
+    // alert("finsh");
+    
+    let gameOverGrab = document.querySelector('.imoji')
+    const createImg = document.createElement('img')
+createImg.src = 'sad40.jpg'
+startGame.replaceChildren(createImg)
     mineArray.map((number) => {
       let mineCell = document.getElementById(`${number}`)
 
@@ -235,7 +246,7 @@ function init() {
           let hintCellCreate = document.createElement('p')
           hintCellCreate.innerHTML = `${hintArrLength}`
           hintCellGet.replaceChildren(hintCellCreate)
-          hintCellGet.setAttribute("class", "hint")
+          hintCellGet.setAttribute("id", "hint")
 
           // console.log(hintAr 
         }

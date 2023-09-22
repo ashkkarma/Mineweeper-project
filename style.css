@@ -20,39 +20,50 @@ body {
   /* box-shadow: 15px 15px 30px gray, -15px -15px 30px darkgray; */
   /* border-radius: 20px; */
 }
-.hint{
+#hint{
 
-  color: DarkRed;
-  font-size: 8vw;
+  color: rgb(180, 20, 172);
+  font-size: 1.5rem;
   font-weight: 900;
   text-align: center;
 }
-.mng{
+.timerandhint{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  column-gap: 70px;
+  column-gap: 270px;
+  margin-top: 60px;
+  margin-bottom: -80px;
+  border:2px solid gray ;
+  width: 900px;
+  height: 45px;
+  background: gray;
 }
-.counter{
-  background: rgb(24, 114, 156);
-    box-shadow: inset 15px 15px 30px green,
-      inset -15px -15px 30px rgb(146, 131, 44);
-    width: 6vw;
+.imoji img{
+  margin-bottom: 0px;
+}
+#countcss{
+  background: rgb(217, 18, 104);
+    /* box-shadow: inset 15px 15px 30px rgb(249, 2, 2),
+      inset -15px -15px 30px rgb(146, 131, 44); */
+    width: 9vw;
     /* height: 30px; */
-    margin: 50px auto 0px;
-    border-radius: 10px;
-    font-size: 2vw;
+    margin: 7px auto 0px 30px;
+    /* border-radius: 10px; */
+    font-size: 1.5vw;
     text-align: center;
+    height: 5vh;
 }
 #time {
-    background: rgb(24, 114, 156);
-    box-shadow: inset 15px 15px 30px green,
-      inset -15px -15px 30px rgb(146, 131, 44);
-    width: 6vw;
-    margin: 50px auto 0px;
+    background: rgb(217, 18, 104);
+    /* box-shadow: inset 15px 15px 30px green,
+      inset -15px -15px 30px rgb(146, 131, 44); */
+    width: 9vw;
+    margin: 7px auto 0px 30px;
     /* padding: 6px 0; */
-    font-size: 2vw;
-    border-radius: 5px;
+    font-size: 1.5vw;
+    /* border-radius: 5px; */
+    height: 5vh;
   }
 
   .timerBtn {

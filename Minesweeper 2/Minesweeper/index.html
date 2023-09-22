@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper</title>
+  <link rel="icon" href="images/minesweeper-icon.png" />
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/app.js"></script>
+</head>
+<body>
+  <main>
+    <!-- Header -->
+    <h1>Minesweeper</h1>
+    <!-- Level Selector -->
+    <div id="level-selector">
+
+      <select id="selected-level">
+        <option value="1">Easy</option>
+        <option value="2">Hard</option>
+        <option value="3">Expert</option>
+      </select>
+    </div>
+    <!-- Toolbar -->
+    <section id="toolbar">
+      <!-- Mines remaining -->
+      <div id="mines-remaining-container">
+        <h2><img src="images/minesweeper-icon.png" alt="Flag"><span id="mines-remaining"></span></h2>
+      </div>
+      <!-- Restart btn-->
+      <div>
+        <h2 id="clear">🙂</h2>
+      </div>
+      <!-- Timer -->
+      <div>
+        <h2 id="timer"></h2>
+      </div>
+    </section>
+
+    <!-- Grid -->
+    <section id="grid" data-level="1">
+      <!-- Grid squares will go here -->
+    </section>
+  </main>
+</body>
+</html>

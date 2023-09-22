@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+
+#mines-remaining-container h2{
+  display: flex;
+}
+
+h2 img{
+  width: 28px;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+}
+
+#toolbar{
+  width: 600px;
+  max-width: 100%;
+  align-items: center;
+}
+
+#toolbar div:nth-of-type(1), #toolbar div:nth-last-of-type(1){
+  flex: 1 0 0;
+}
+
+#toolbar div:nth-last-of-type(1){
+  text-align: right;
+}
+
+#clear{
+  font-size: 2em;
+  margin: 0;
+  cursor: pointer;
+}
+
+#grid {
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+}
+
+#grid[data-level="3"]{
+  width: 600px;
+  height: calc(600px / 30 * 16)
+}
+
+#grid div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: 4px solid rgb(111, 111, 111);
+  border-top-color: rgb(200, 200, 200);
+  border-left-color: rgb(200, 200, 200);
+  background-color: #a1a1a1;
+  cursor: pointer;
+}
+
+#grid[data-level="1"] div{
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+  font-size: 1.4em;
+}
+
+#grid[data-level="2"] div{
+  width: calc(100% / 15);
+  height: calc(100% / 15);
+}
+
+#grid[data-level="3"] div{
+  width: calc(100% / 30);
+  height: calc(100% / 16);
+  font-size: 0.9em;
+}
+
+#grid div.zero, #grid div.one, #grid div.two, #grid div.three, #grid div.four, #grid div.five, #grid div.six{
+  background-color: #bdbdbd;
+  border: 2px solid #7b7b7b;
+}
+#grid div.one{
+  color: blue;
+}
+#grid div.two{
+  color: green;
+}
+#grid div.three{
+  color: purple;
+}
+#grid div.four{
+  color: yellow;
+}
+#grid div.five{
+  color: orange;
+}
+#grid div.six{
+  color: red;
+}
+
+#grid div.mine.show, #grid div.mine.hit{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#grid div.mine.show{
+  background-image: url(../images/mine.png);
+}
+
+#grid div.mine.hit {
+  background-image: url(../images/exploded-mine.png);
+}
