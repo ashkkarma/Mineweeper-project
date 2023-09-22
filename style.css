@@ -31,24 +31,24 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  column-gap: 270px;
-  margin-top: 60px;
+  column-gap: 150px;
+  margin-top: 120px;
   margin-bottom: -80px;
   border:2px solid gray ;
   width: 900px;
-  height: 45px;
+  height: 40px;
   background: gray;
 }
 .imoji img{
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 #countcss{
   background: rgb(217, 18, 104);
     /* box-shadow: inset 15px 15px 30px rgb(249, 2, 2),
       inset -15px -15px 30px rgb(146, 131, 44); */
-    width: 9vw;
+    width: 7vw;
     /* height: 30px; */
-    margin: 7px auto 0px 30px;
+    margin: 0px 30px 10px 30px;
     /* border-radius: 10px; */
     font-size: 1.5vw;
     text-align: center;
@@ -58,8 +58,8 @@ body {
     background: rgb(217, 18, 104);
     /* box-shadow: inset 15px 15px 30px green,
       inset -15px -15px 30px rgb(146, 131, 44); */
-    width: 9vw;
-    margin: 7px auto 0px 30px;
+    width: 7vw;
+    margin: 0px auto 10px 30px;
     /* padding: 6px 0; */
     font-size: 1.5vw;
     /* border-radius: 5px; */
