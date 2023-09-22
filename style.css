@@ -4,26 +4,55 @@ box-sizing: border-box;
 body {
     height: 100 vh;
     margin: 0;
-   
+   /* display: flex; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 .timer{
-    width: 20%;
-    padding: 2vw 0;
-  
+  /* margin: 0 auto; */
+    /* width: 10%; */
+    /* padding: 2vw 0; */
+  /* display: none; */
   text-align: center;
-  background: rgb(87, 87, 130);
-  box-shadow: 15px 15px 30px gray, -15px -15px 30px darkgray;
-  border-radius: 20px;
+  /* background: rgb(87, 87, 130); */
+  /* box-shadow: 15px 15px 30px gray, -15px -15px 30px darkgray; */
+  /* border-radius: 20px; */
+}
+.hint{
+
+  color: DarkRed;
+  font-size: 8vw;
+  font-weight: 900;
+  text-align: center;
+}
+.mng{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 70px;
+}
+.counter{
+  background: rgb(24, 114, 156);
+    box-shadow: inset 15px 15px 30px green,
+      inset -15px -15px 30px rgb(146, 131, 44);
+    width: 6vw;
+    /* height: 30px; */
+    margin: 50px auto 0px;
+    border-radius: 10px;
+    font-size: 2vw;
+    text-align: center;
 }
 #time {
-    background: gold;
+    background: rgb(24, 114, 156);
     box-shadow: inset 15px 15px 30px green,
-      inset -15px -15px 30px gold;
-    width: calc(100% - 20%);
-    margin: 3vw auto;
-    padding: 6px 0;
-    font-size: 4vw;
-    border-radius: 20px;
+      inset -15px -15px 30px rgb(146, 131, 44);
+    width: 6vw;
+    margin: 50px auto 0px;
+    /* padding: 6px 0; */
+    font-size: 2vw;
+    border-radius: 5px;
   }
 
   .timerBtn {
@@ -54,15 +83,17 @@ body {
   #reset {
     color: blue;
   } */
-
-.mineBody {
+.mineCell {
+  object-fit: cover;
+}
+/* .mineBody {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 .container{
-  
+  margin-top: 80px;
     align-items: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -74,6 +105,7 @@ body {
     width: 40%;
     min-width: 900px;
     /* line-height:0.8em; */
+    background-color: CadetBlue;
     
 }
 .container div {

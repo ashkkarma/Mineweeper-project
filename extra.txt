@@ -116,3 +116,36 @@ for (let i = 16 ; i < (cellCount+16) ; i ++){
         // console.log(hintArr);
        
         }
+
+
+
+
+        let mapArr = []
+for ( let i = 16 ; i < 273 ; i ++){
+  mapArr.push(i)
+}
+// console.log(mapArr);
+const emptyHintArry = mapArr.filter ((allCells) =>{
+if (mineArray.includes(allCells)=== false ){
+return allCells
+}
+
+})
+
+
+emptyReveal()
+function emptyReveal(){
+  
+for (let i = 16 ; i < (cellCount+16) ; i ++){
+const emptyGet = document.getElementById(`${i}`)
+const num = parseInt(emptyGet)
+emptyGet.addEventListener('click', () =>{
+  // if (mineArray.includes(num)=== false&& lengthCal(i)<1 ){
+  //   emptyHintArry.map((x)=>{
+  //     const reavelCellGet = document.getElementById(`${x}`)
+  //     reavelCellGet.style.backgroundColor = 'gray'
+  //   })
+  // }
+})
+}
+}
